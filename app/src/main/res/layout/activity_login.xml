@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e4cfff"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/chaomung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="50dp"
+        android:text="Chào mừng đến với PTIT Online"
+
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dangnhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Đăng nhập để tiếp tục"
+
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/chaomung"
+        app:layout_constraintStart_toStartOf="@+id/chaomung"
+        app:layout_constraintTop_toTopOf="@+id/chaomung" />
+
+    <EditText
+        android:id="@+id/taikhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="60dp"
+        android:hint="Tài khoản"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/chaomung"
+        app:layout_constraintStart_toStartOf="@id/chaomung"
+        app:layout_constraintTop_toTopOf="@+id/dangnhap" />
+
+    <EditText
+        android:id="@+id/matkhau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="70dp"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/taikhoan"
+        app:layout_constraintStart_toStartOf="@id/taikhoan"
+        app:layout_constraintTop_toTopOf="@+id/taikhoan" />
+
+    <Button
+        android:id="@+id/btnDangnhap"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="70dp"
+        android:text="Đăng nhập"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/matkhau"
+        app:layout_constraintStart_toStartOf="@+id/matkhau"
+        app:layout_constraintTop_toTopOf="@+id/matkhau" />
+
+    <TextView
+        android:id="@+id/chuacotaikhoan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="30dp"
+        android:text="Chưa có tài khoản? Liên hệ giáo viên của bạn để được cấp tài khoản ngay!"
+
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/btnDangnhap"
+        app:layout_constraintStart_toStartOf="@id/btnDangnhap"
+        app:layout_constraintTop_toTopOf="@+id/btnDangnhap" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
