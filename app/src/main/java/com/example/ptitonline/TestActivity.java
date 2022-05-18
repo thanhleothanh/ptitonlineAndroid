@@ -14,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,51 +29,50 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class QuizActivity extends AppCompatActivity {
-    private ImageView quizBackicon, quizHinhanh;
+public class TestActivity extends AppCompatActivity {
+    private ImageView testBackicon, testHinhanh;
     private List<Button> btnAnswers;
-    private TextView quizMonhoc, quizCauhoi, quizDiem, quizCauhoihientai;
-    private Button quizBtnCautraloi1, quizBtnCautraloi2, quizBtnCautraloi3, quizBtnCautraloi4;
-    private String varMonhoc;
-    private int varMonhocId, varCauhoihientai, varDiem, curAnswer;
+    private TextView testTenbaithi, testCauhoi, testDiem, testCauhoihientai;
+    private Button testBtnCautraloi1, testBtnCautraloi2, testBtnCautraloi3, testBtnCautraloi4;
+    private String varBaithi;
+    private int varBaithiId, varCauhoihientai, varDiem, curAnswer;
     private List<Cauhoi> listCauhoi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
-
+        setContentView(R.layout.activity_test);
         initView();
         getQuestions();
 
-        quizBackicon.setOnClickListener(new View.OnClickListener() {
+        testBackicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-        quizBtnCautraloi1.setOnClickListener(new View.OnClickListener() {
+        testBtnCautraloi1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(quizBtnCautraloi1, 0);
+                checkAnswer(testBtnCautraloi1, 0);
             }
         });
-        quizBtnCautraloi2.setOnClickListener(new View.OnClickListener() {
+        testBtnCautraloi2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(quizBtnCautraloi2, 1);
+                checkAnswer(testBtnCautraloi2, 1);
             }
         });
-        quizBtnCautraloi3.setOnClickListener(new View.OnClickListener() {
+        testBtnCautraloi3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(quizBtnCautraloi3, 2);
+                checkAnswer(testBtnCautraloi3, 2);
             }
         });
-        quizBtnCautraloi4.setOnClickListener(new View.OnClickListener() {
+        testBtnCautraloi4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(quizBtnCautraloi4, 3);
+                checkAnswer(testBtnCautraloi4, 3);
             }
         });
     }
@@ -86,11 +84,11 @@ public class QuizActivity extends AppCompatActivity {
         btnAnswers.get(curAnswer).setTextColor(Color.parseColor("#4fe067"));
         if (btnID != curAnswer) {
             btn.setTextColor(Color.parseColor("#e85d5d"));
-            Toast.makeText(QuizActivity.this, ":(", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TestActivity.this, ":(", Toast.LENGTH_SHORT).show();
         } else {
             varDiem++;
-            quizDiem.setText("Điểm: " + varDiem);
-            Toast.makeText(QuizActivity.this, ":)", Toast.LENGTH_SHORT).show();
+            testDiem.setText("Điểm: " + varDiem);
+            Toast.makeText(TestActivity.this, ":)", Toast.LENGTH_SHORT).show();
         }
 
         varCauhoihientai++;
@@ -105,7 +103,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void getQuestions() {
-        ApiService.apiService.getQuestions(varMonhocId).enqueue(new Callback<List<Cauhoi>>() {
+        ApiService.apiService.getTestQuestions(varBaithiId).enqueue(new Callback<List<Cauhoi>>() {
             @Override
             public void onResponse(Call<List<Cauhoi>> call, Response<List<Cauhoi>> response) {
                 if (response.isSuccessful()) {
@@ -116,17 +114,18 @@ public class QuizActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Cauhoi>> call, Throwable t) {
-                Toast.makeText(QuizActivity.this, "Có gì đó không đúng!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TestActivity.this, "Có gì đó không đúng!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void displayNextQuestion() {
         if (varCauhoihientai == listCauhoi.size()) {
-            Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-            intent.putExtra("isBaithi", false);
+            Intent intent = new Intent(TestActivity.this, ResultActivity.class);
+            intent.putExtra("isBaithi", true);
             intent.putExtra("diem", varDiem);
-            intent.putExtra("monhoc", varMonhoc);
+            intent.putExtra("baithi", varBaithi);
+            intent.putExtra("baithiId", varBaithiId);
             startActivity(intent);
             finish();
         } else {
@@ -144,57 +143,57 @@ public class QuizActivity extends AppCompatActivity {
             for (Button i : btnAnswers) {
                 i.setClickable(true);
             }
-            quizBtnCautraloi1.setText(answers.get(0));
-            quizBtnCautraloi1.setTextColor(Color.WHITE);
-            quizBtnCautraloi2.setText(answers.get(1));
-            quizBtnCautraloi2.setTextColor(Color.WHITE);
-            quizBtnCautraloi3.setText(answers.get(2));
-            quizBtnCautraloi3.setTextColor(Color.WHITE);
-            quizBtnCautraloi4.setText(answers.get(3));
-            quizBtnCautraloi4.setTextColor(Color.WHITE);
-            quizCauhoi.setText(listCauhoi.get(varCauhoihientai).getCauhoi());
+            testBtnCautraloi1.setText(answers.get(0));
+            testBtnCautraloi1.setTextColor(Color.WHITE);
+            testBtnCautraloi2.setText(answers.get(1));
+            testBtnCautraloi2.setTextColor(Color.WHITE);
+            testBtnCautraloi3.setText(answers.get(2));
+            testBtnCautraloi3.setTextColor(Color.WHITE);
+            testBtnCautraloi4.setText(answers.get(3));
+            testBtnCautraloi4.setTextColor(Color.WHITE);
+            testCauhoi.setText(listCauhoi.get(varCauhoihientai).getCauhoi());
 
             if (!listCauhoi.get(varCauhoihientai).getHinhanh().isEmpty()) {
-                quizHinhanh.getLayoutParams().height = ConstraintLayout.LayoutParams.WRAP_CONTENT;
-                quizHinhanh.setVisibility(View.VISIBLE);
-                new DownloadImageTask(quizHinhanh)
+                testHinhanh.getLayoutParams().height = ConstraintLayout.LayoutParams.WRAP_CONTENT;
+                testHinhanh.setVisibility(View.VISIBLE);
+                new TestActivity.DownloadImageTask(testHinhanh)
                         .execute(listCauhoi.get(varCauhoihientai).getHinhanh());
             } else {
-                quizHinhanh.getLayoutParams().height = 0;
-                quizHinhanh.setVisibility(View.INVISIBLE);
+                testHinhanh.getLayoutParams().height = 0;
+                testHinhanh.setVisibility(View.INVISIBLE);
             }
 
             int temp = varCauhoihientai + 1;
-            quizCauhoihientai.setText("Câu hỏi hiện tại: " + temp + "/" + listCauhoi.size());
+            testCauhoihientai.setText("Câu hỏi hiện tại: " + temp + "/" + listCauhoi.size());
         }
     }
 
     private void initView() {
-        quizBackicon = findViewById(R.id.quizBackicon);
-        quizHinhanh = findViewById(R.id.quizHinhanh);
-        quizMonhoc = findViewById(R.id.quizMonhoc);
-        quizCauhoi = findViewById(R.id.quizCauhoi);
-        quizDiem = findViewById(R.id.quizDiem);
-        quizCauhoihientai = findViewById(R.id.quizCauhoihientai);
-        quizBtnCautraloi1 = findViewById(R.id.quizBtnCautraloi1);
-        quizBtnCautraloi2 = findViewById(R.id.quizBtnCautraloi2);
-        quizBtnCautraloi3 = findViewById(R.id.quizBtnCautraloi3);
-        quizBtnCautraloi4 = findViewById(R.id.quizBtnCautraloi4);
+        testBackicon = findViewById(R.id.testBackicon);
+        testHinhanh = findViewById(R.id.testHinhanh);
+        testTenbaithi = findViewById(R.id.testTenbaithi);
+        testCauhoi = findViewById(R.id.testCauhoi);
+        testDiem = findViewById(R.id.testDiem);
+        testCauhoihientai = findViewById(R.id.testCauhoihientai);
+        testBtnCautraloi1 = findViewById(R.id.testBtnCautraloi1);
+        testBtnCautraloi2 = findViewById(R.id.testBtnCautraloi2);
+        testBtnCautraloi3 = findViewById(R.id.testBtnCautraloi3);
+        testBtnCautraloi4 = findViewById(R.id.testBtnCautraloi4);
 
         btnAnswers = new ArrayList<>();
-        btnAnswers.add(quizBtnCautraloi1);
-        btnAnswers.add(quizBtnCautraloi2);
-        btnAnswers.add(quizBtnCautraloi3);
-        btnAnswers.add(quizBtnCautraloi4);
+        btnAnswers.add(testBtnCautraloi1);
+        btnAnswers.add(testBtnCautraloi2);
+        btnAnswers.add(testBtnCautraloi3);
+        btnAnswers.add(testBtnCautraloi4);
 
         Intent intent = getIntent();
-        varMonhoc = intent.getStringExtra("monhoc");
-        varMonhocId = intent.getIntExtra("monhocId", 1);
+        varBaithi = intent.getStringExtra("baithi");
+        varBaithiId = intent.getIntExtra("baithiId", 0);
         varCauhoihientai = 0;
         varDiem = 0;
 
-        quizDiem.setText("Điểm: 0");
-        quizMonhoc.setText(varMonhoc);
+        testDiem.setText("Điểm: 0");
+        testTenbaithi.setText(varBaithi);
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {

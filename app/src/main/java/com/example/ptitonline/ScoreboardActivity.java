@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.ptitonline.adapters.ScoreboardAdapter;
 import com.example.ptitonline.api.ApiService;
+import com.example.ptitonline.models.Baithi;
 import com.example.ptitonline.models.Nguoidung;
 
 import java.util.List;
@@ -22,24 +23,25 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ScoreboardActivity extends AppCompatActivity {
-    private RecyclerView bangxephangRecycleView;
+    private RecyclerView scoreboardRecycleview;
     private ScoreboardAdapter scoreboardAdapter;
-    private ImageView backicon;
+    private ImageView scoreboardBackicon;
+    private List<Nguoidung> nguoidungList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
-        bangxephangRecycleView = findViewById(R.id.bangxephangRecycleView);
+        scoreboardRecycleview = findViewById(R.id.scoreboardRecycleView);
         scoreboardAdapter = new ScoreboardAdapter();
         LinearLayoutManager manager = new LinearLayoutManager(this);
-        bangxephangRecycleView.setAdapter(scoreboardAdapter);
-        bangxephangRecycleView.setLayoutManager(manager);
+        scoreboardRecycleview.setAdapter(scoreboardAdapter);
+        scoreboardRecycleview.setLayoutManager(manager);
         apiBangxepahang();
 
 
-        backicon = findViewById(R.id.backiconScoreboard);
-        backicon.setOnClickListener(new View.OnClickListener() {
+        scoreboardBackicon = findViewById(R.id.scoreboardBackicon);
+        scoreboardBackicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -52,8 +54,8 @@ public class ScoreboardActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Nguoidung>> call, Response<List<Nguoidung>> response) {
                 if (response.isSuccessful()) {
-                    List<Nguoidung> list = (List<Nguoidung>) response.body();
-                    scoreboardAdapter.setList(list);
+                    nguoidungList = (List<Nguoidung>) response.body();
+                    scoreboardAdapter.setList(nguoidungList);
                 }
             }
 

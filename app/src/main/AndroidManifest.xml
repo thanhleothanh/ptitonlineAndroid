@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PtitOnline"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MyTestResultsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
             android:name=".ScoreboardActivity"
             android:exported="false" />
         <activity

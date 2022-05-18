@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         SharedPref sharedPref = SharedPref.getInstance();
-        sharedPref.clearSharedPref(LoginActivity.this);
         if (sharedPref.getUser(LoginActivity.this) != null) {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
@@ -79,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }
                     }
+                } else {
+                    Toast.makeText(LoginActivity.this, "Sai thông tin đăng nhập!", Toast.LENGTH_SHORT).show();
                 }
             }
 

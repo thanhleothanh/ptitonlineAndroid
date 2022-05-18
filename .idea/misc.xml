@@ -6,10 +6,21 @@
         <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/drawable-v24/home_bg.xml" value="0.1315" />
         <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_login.xml" value="0.2436923148431724" />
         <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_quiz.xml" value="0.2436923148431724" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_my_test_results.xml" value="0.18041898247114152" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_quiz.xml" value="0.18461539003270633" />
         <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_result.xml" value="0.18041898247114152" />
         <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_scoreboard.xml" value="0.2436923148431724" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/activity_test.xml" value="0.18041898247114152" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/fragment_baithi.xml" value="0.16246154322878156" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/fragment_home_baithi.xml" value="0.168875587858059" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/fragment_home_luyentap.xml" value="0.1" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/fragment_luyentap.xml" value="0.2436923148431724" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/fragment_profile.xml" value="0.18461539003270633" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/item_baithi.xml" value="0.18461539003270633" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/item_ketquabaithi.xml" value="0.18041898247114152" />
         <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/layout/item_scoreboard.xml" value="0.2436923148431724" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/menu/menu_bottomnav.xml" value="0.18041898247114152" />
+        <entry key="..\:/Users/thanh/Desktop/PtitOnline/app/src/main/res/menu/menu_tablayout.xml" value="0.18041898247114152" />
       </map>
     </option>
   </component>

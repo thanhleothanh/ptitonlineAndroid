@@ -9,7 +9,6 @@ public class Cauhoi {
     private String cautraloisai3;
     private String hinhanh;
     private int tblmonhocid;
-    private Monhoc monhoc;
 
     @Override
     public String toString() {
@@ -22,7 +21,6 @@ public class Cauhoi {
                 ", cautraloisai3='" + cautraloisai3 + '\'' +
                 ", hinhanh='" + hinhanh + '\'' +
                 ", tblmonhocid=" + tblmonhocid +
-                ", monhoc=" + monhoc +
                 '}';
     }
 
@@ -88,14 +86,6 @@ public class Cauhoi {
 
     public void setTblmonhocid(int tblmonhocid) {
         this.tblmonhocid = tblmonhocid;
-    }
-
-    public Monhoc getMonhoc() {
-        return monhoc;
-    }
-
-    public void setMonhoc(Monhoc monhoc) {
-        this.monhoc = monhoc;
     }
 
 

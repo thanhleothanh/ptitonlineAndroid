@@ -8,7 +8,7 @@
     tools:context=".ScoreboardActivity">
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/scrollview"
+        android:id="@+id/scoreboardScrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +17,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/backiconScoreboard"
+                android:id="@+id/scoreboardBackicon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="24dp"
@@ -29,27 +29,27 @@
                 app:tint="@color/black" />
 
             <TextView
-                android:id="@+id/bangxephang"
+                android:id="@+id/scoreboardTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Bảng xếp hạng"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/backiconScoreboard"
-                app:layout_constraintStart_toEndOf="@+id/backiconScoreboard"
-                app:layout_constraintTop_toTopOf="@+id/backiconScoreboard" />
+                app:layout_constraintBottom_toBottomOf="@+id/scoreboardBackicon"
+                app:layout_constraintStart_toEndOf="@+id/scoreboardBackicon"
+                app:layout_constraintTop_toTopOf="@+id/scoreboardBackicon" />
 
             <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/tableHead"
+                android:id="@+id/scoreboardTablehead"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bangxephang">
+                app:layout_constraintTop_toBottomOf="@+id/scoreboardTitle">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                         android:gravity="center"
                         android:paddingHorizontal="5dp"
                         android:text="Username"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -81,7 +81,7 @@
                         android:gravity="center"
                         android:paddingHorizontal="5dp"
                         android:text="Họ tên"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -92,20 +92,20 @@
                         android:gravity="center"
                         android:paddingHorizontal="5dp"
                         android:text="Điểm"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/bangxephangRecycleView"
+                android:id="@+id/scoreboardRecycleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tableHead" />
+                app:layout_constraintTop_toBottomOf="@+id/scoreboardTablehead" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

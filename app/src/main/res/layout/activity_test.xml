@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e4cfff"
-    tools:context=".QuizActivity">
+    tools:context=".TestActivity">
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/quizScrollview"
+        android:id="@+id/testScrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,7 +18,7 @@
 
 
             <ImageView
-                android:id="@+id/quizBackicon"
+                android:id="@+id/testBackicon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="24dp"
@@ -30,19 +30,20 @@
                 app:tint="@color/black" />
 
             <TextView
-                android:id="@+id/quizMonhoc"
+                android:id="@+id/testTenbaithi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Bài Quiz"
+                android:paddingRight="50dp"
+                android:text="Bài Test"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/quizBackicon"
-                app:layout_constraintStart_toEndOf="@+id/quizBackicon"
-                app:layout_constraintTop_toTopOf="@+id/quizBackicon" />
+                app:layout_constraintBottom_toBottomOf="@+id/testBackicon"
+                app:layout_constraintStart_toEndOf="@+id/testBackicon"
+                app:layout_constraintTop_toTopOf="@+id/testBackicon" />
 
             <TextView
-                android:id="@+id/quizCauhoi"
+                android:id="@+id/testCauhoi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -53,66 +54,66 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/quizMonhoc" />
+                app:layout_constraintTop_toBottomOf="@+id/testTenbaithi" />
 
             <ImageView
-                android:id="@+id/quizHinhanh"
+                android:id="@+id/testHinhanh"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="100dp"
+                android:layout_marginHorizontal="70dp"
                 android:layout_marginTop="20dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/quizCauhoi" />
+                app:layout_constraintTop_toBottomOf="@+id/testCauhoi" />
 
             <Button
-                android:id="@+id/quizBtnCautraloi1"
+                android:id="@+id/testBtnCautraloi1"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:text="Answer 1"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="@+id/quizCauhoi"
-                app:layout_constraintStart_toStartOf="@+id/quizCauhoi"
-                app:layout_constraintTop_toBottomOf="@+id/quizHinhanh" />
+                app:layout_constraintEnd_toEndOf="@+id/testCauhoi"
+                app:layout_constraintStart_toStartOf="@+id/testCauhoi"
+                app:layout_constraintTop_toBottomOf="@+id/testHinhanh" />
 
             <Button
-                android:id="@+id/quizBtnCautraloi2"
+                android:id="@+id/testBtnCautraloi2"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:text="Answer 2"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="@+id/quizBtnCautraloi1"
-                app:layout_constraintStart_toStartOf="@+id/quizBtnCautraloi1"
-                app:layout_constraintTop_toBottomOf="@+id/quizBtnCautraloi1" />
+                app:layout_constraintEnd_toEndOf="@+id/testBtnCautraloi1"
+                app:layout_constraintStart_toStartOf="@+id/testBtnCautraloi1"
+                app:layout_constraintTop_toBottomOf="@+id/testBtnCautraloi1" />
 
             <Button
-                android:id="@+id/quizBtnCautraloi3"
+                android:id="@+id/testBtnCautraloi3"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:text="Answer 3"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="@+id/quizBtnCautraloi2"
-                app:layout_constraintStart_toStartOf="@+id/quizBtnCautraloi2"
-                app:layout_constraintTop_toBottomOf="@+id/quizBtnCautraloi2" />
+                app:layout_constraintEnd_toEndOf="@+id/testBtnCautraloi2"
+                app:layout_constraintStart_toStartOf="@+id/testBtnCautraloi2"
+                app:layout_constraintTop_toBottomOf="@+id/testBtnCautraloi2" />
 
             <Button
-                android:id="@+id/quizBtnCautraloi4"
+                android:id="@+id/testBtnCautraloi4"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:text="Answer 4"
                 android:textSize="14dp"
-                app:layout_constraintEnd_toEndOf="@+id/quizBtnCautraloi3"
-                app:layout_constraintStart_toStartOf="@+id/quizBtnCautraloi3"
-                app:layout_constraintTop_toBottomOf="@+id/quizBtnCautraloi3" />
+                app:layout_constraintEnd_toEndOf="@+id/testBtnCautraloi3"
+                app:layout_constraintStart_toStartOf="@+id/testBtnCautraloi3"
+                app:layout_constraintTop_toBottomOf="@+id/testBtnCautraloi3" />
 
             <TextView
-                android:id="@+id/quizDiem"
+                android:id="@+id/testDiem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -122,10 +123,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/quizBtnCautraloi4" />
+                app:layout_constraintTop_toBottomOf="@id/testBtnCautraloi4" />
 
             <TextView
-                android:id="@+id/quizCauhoihientai"
+                android:id="@+id/testCauhoihientai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -134,7 +135,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/quizDiem" />
+                app:layout_constraintTop_toBottomOf="@id/testDiem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

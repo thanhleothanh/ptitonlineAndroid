@@ -8,14 +8,14 @@
     tools:context=".ResultActivity">
 
     <TextView
-        android:id="@+id/thongbao"
+        android:id="@+id/resultThongbao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:gravity="center_horizontal"
-        android:text="Chúc mừng bạn đã được 5 điểm"
         android:paddingHorizontal="30dp"
-        android:textSize="30dp"
+        android:text="Chúc mừng bạn đã được 5 điểm"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,26 +23,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTrangchu"
-        android:layout_width="180dp"
+        android:id="@+id/resultBtnTrangchu"
+        android:layout_width="240dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="Về trang chủ"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/thongbao"
-        app:layout_constraintStart_toStartOf="@+id/thongbao"
-        app:layout_constraintTop_toBottomOf="@+id/thongbao" />
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/resultThongbao"
+        app:layout_constraintStart_toStartOf="@+id/resultThongbao"
+        app:layout_constraintTop_toBottomOf="@+id/resultThongbao" />
 
     <Button
-        android:id="@+id/btnBangxephang"
-        android:layout_width="180dp"
+        android:id="@+id/resultBtnForward"
+        android:layout_width="240dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
         android:text="Bảng xếp hạng"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/btnTrangchu"
-        app:layout_constraintStart_toStartOf="@+id/btnTrangchu"
-        app:layout_constraintTop_toBottomOf="@+id/btnTrangchu" />
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/resultBtnTrangchu"
+        app:layout_constraintStart_toStartOf="@+id/resultBtnTrangchu"
+        app:layout_constraintTop_toBottomOf="@+id/resultBtnTrangchu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

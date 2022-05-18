@@ -41,7 +41,6 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="60dp"
         android:hint="Tài khoản"
-        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@id/chaomung"
         app:layout_constraintStart_toStartOf="@id/chaomung"
         app:layout_constraintTop_toTopOf="@+id/dangnhap" />
@@ -54,7 +53,6 @@
         android:layout_marginTop="70dp"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
-        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@id/taikhoan"
         app:layout_constraintStart_toStartOf="@id/taikhoan"
         app:layout_constraintTop_toTopOf="@+id/taikhoan" />

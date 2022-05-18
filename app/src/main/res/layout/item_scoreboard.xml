@@ -28,11 +28,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:gravity="center"
             android:paddingHorizontal="5dp"
             android:text="Username"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -40,11 +40,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:gravity="center"
             android:paddingHorizontal="5dp"
             android:text="Họ tên"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -52,11 +52,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center"
             android:paddingHorizontal="5dp"
             android:text="Điểm"
-            android:textSize="15dp"
+            android:textSize="14dp"
             android:textStyle="italic" />
 
     </LinearLayout>
