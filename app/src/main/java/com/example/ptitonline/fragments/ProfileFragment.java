@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.ptitonline.LoginActivity;
 import com.example.ptitonline.MainActivity;
+import com.example.ptitonline.MyTestResultsActivity;
 import com.example.ptitonline.R;
 import com.example.ptitonline.ResultActivity;
 import com.example.ptitonline.api.ApiService;
@@ -132,7 +133,7 @@ public class ProfileFragment extends Fragment {
 
                 @Override
                 public void onFailure(Call<Nguoidung> call, Throwable t) {
-                    Toast.makeText(getContext(), "Có gì đó không đúng ở đây!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -167,7 +168,7 @@ public class ProfileFragment extends Fragment {
 
                 @Override
                 public void onFailure(Call<Nguoidung> call, Throwable t) {
-                    Toast.makeText(getContext(), "Có gì đó không đúng ở đây!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
                 }
             });
 

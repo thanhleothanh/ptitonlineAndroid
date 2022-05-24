@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e4cfff"
+    android:background="#f0e4f7"
     tools:context=".LoginActivity">
 
     <TextView
@@ -77,7 +77,6 @@
         android:gravity="center_horizontal"
         android:paddingHorizontal="30dp"
         android:text="Chưa có tài khoản? Liên hệ giáo viên của bạn để được cấp tài khoản ngay!"
-
         android:textSize="20dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/btnDangnhap"

@@ -1,19 +1,18 @@
 package com.example.ptitonline;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ptitonline.adapters.ScoreboardAdapter;
 import com.example.ptitonline.api.ApiService;
-import com.example.ptitonline.models.Baithi;
 import com.example.ptitonline.models.Nguoidung;
 
 import java.util.List;
@@ -27,20 +26,22 @@ public class ScoreboardActivity extends AppCompatActivity {
     private ScoreboardAdapter scoreboardAdapter;
     private ImageView scoreboardBackicon;
     private List<Nguoidung> nguoidungList;
+    private TextView scoreboardInfo;
+    private CardView scoreboardTablehead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
-        scoreboardRecycleview = findViewById(R.id.scoreboardRecycleView);
+
+        initView();
+
         scoreboardAdapter = new ScoreboardAdapter();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         scoreboardRecycleview.setAdapter(scoreboardAdapter);
         scoreboardRecycleview.setLayoutManager(manager);
         apiBangxepahang();
 
-
-        scoreboardBackicon = findViewById(R.id.scoreboardBackicon);
         scoreboardBackicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,14 +57,27 @@ public class ScoreboardActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     nguoidungList = (List<Nguoidung>) response.body();
                     scoreboardAdapter.setList(nguoidungList);
+                    scoreboardInfo.setVisibility(View.GONE);
+                    scoreboardTablehead.setVisibility(View.VISIBLE);
+                } else {
+                    scoreboardInfo.setVisibility(View.VISIBLE);
+                    scoreboardTablehead.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Nguoidung>> call, Throwable t) {
-                Toast.makeText(ScoreboardActivity.this, "Có gì đó không đúng ở đây!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ScoreboardActivity.this, "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    private void initView() {
+        scoreboardRecycleview = findViewById(R.id.scoreboardRecycleView);
+        scoreboardInfo = findViewById(R.id.scoreboardInfo);
+        scoreboardTablehead = findViewById(R.id.scoreboardTablehead);
+        scoreboardBackicon = findViewById(R.id.scoreboardBackicon);
+    }
+
 
 }

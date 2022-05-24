@@ -114,7 +114,8 @@ public class TestActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Cauhoi>> call, Throwable t) {
-                Toast.makeText(TestActivity.this, "Có gì đó không đúng!", Toast.LENGTH_SHORT).show();
+                finish();
+                Toast.makeText(TestActivity.this, "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
             }
         });
     }

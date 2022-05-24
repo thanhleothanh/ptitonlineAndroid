@@ -28,7 +28,7 @@ public interface ApiService {
 
     //nhớ dùng ip mạng máy
     ApiService apiService = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.4:8080/ptitonline/webapi/")
+            .baseUrl("http://192.168.43.188:8080/ptitonline/webapi/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);

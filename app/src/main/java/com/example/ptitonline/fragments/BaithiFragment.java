@@ -117,31 +117,6 @@ public class BaithiFragment extends Fragment implements BaithiAdapter.BaithiClic
         return view;
     }
 
-    private void initData() {
-        SharedPref sharedPref = SharedPref.getInstance();
-        Nguoidung user = sharedPref.getUser(getContext());
-
-        ApiService.apiService.getTests(user.getID() + "").enqueue(new Callback<List<Baithi>>() {
-            @Override
-            public void onResponse(Call<List<Baithi>> call, Response<List<Baithi>> response) {
-                baithiList = (List<Baithi>) response.body();
-                baithiAdapter.setList(baithiList);
-                if (baithiList.size() == 0)
-                    baithiInfo.setVisibility(View.VISIBLE);
-                else {
-                    baithiInfo.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Baithi>> call, Throwable t) {
-                Toast.makeText(getContext(), "Có gì đó không đúng!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-    }
-
     private void initView(View view) {
         baithiRecycleview = view.findViewById(R.id.baithiRecycleview);
         baithiInfo = view.findViewById(R.id.baithiInfo);
@@ -156,6 +131,33 @@ public class BaithiFragment extends Fragment implements BaithiAdapter.BaithiClic
         baithiRecycleview.setLayoutManager(manager);
     }
 
+    private void initData() {
+        SharedPref sharedPref = SharedPref.getInstance();
+        Nguoidung user = sharedPref.getUser(getContext());
+
+        ApiService.apiService.getTests(user.getID() + "").enqueue(new Callback<List<Baithi>>() {
+            @Override
+            public void onResponse(Call<List<Baithi>> call, Response<List<Baithi>> response) {
+                if (response.isSuccessful()) {
+                    baithiList = (List<Baithi>) response.body();
+                    baithiAdapter.setList(baithiList);
+                    if (baithiList.size() == 0)
+                        baithiInfo.setVisibility(View.VISIBLE);
+                    else {
+                        baithiInfo.setVisibility(View.GONE);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Baithi>> call, Throwable t) {
+                baithiInfo.setVisibility(View.VISIBLE);
+                Toast.makeText(getContext(), "Server đang lỗi, không thể lấy được các bài thi, thử lại sau!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
 
     public void getTestResult(Baithi baithi, int baithiId, int userId) {
         ApiService.apiService.getTestResult(baithiId, userId).enqueue(new Callback<Ketquabaithi>() {
@@ -176,7 +178,7 @@ public class BaithiFragment extends Fragment implements BaithiAdapter.BaithiClic
 
             @Override
             public void onFailure(Call<Ketquabaithi> call, Throwable t) {
-                Toast.makeText(getContext(), "Có gì đó không đúng ở đây!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
             }
         });
     }

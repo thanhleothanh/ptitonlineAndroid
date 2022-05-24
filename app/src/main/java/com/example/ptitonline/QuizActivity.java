@@ -116,7 +116,8 @@ public class QuizActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Cauhoi>> call, Throwable t) {
-                Toast.makeText(QuizActivity.this, "Có gì đó không đúng!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(QuizActivity.this, "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

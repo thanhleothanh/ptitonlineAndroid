@@ -73,7 +73,7 @@ public class MyTestResultsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Ketquabaithi>> call, Throwable t) {
-                Toast.makeText(MyTestResultsActivity.this, "Có gì đó không đúng ở đây!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyTestResultsActivity.this, "Server đang lỗi, thử lại sau!", Toast.LENGTH_SHORT).show();
             }
         });
 
